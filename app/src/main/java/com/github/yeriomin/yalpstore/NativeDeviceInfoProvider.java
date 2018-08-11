@@ -45,6 +45,16 @@ public class NativeDeviceInfoProvider implements DeviceInfoProvider {
         return Build.VERSION.SDK_INT;
     }
 
+    @Override
+    public int getPlayServicesVersion() {
+        return 0;
+    }
+
+    @Override
+    public String getMccmnc() {
+        return null;
+    }
+
     public String getUserAgentString() {
         return "Android-Finsky/7.9.80 ("
             + "api=3"
@@ -55,6 +65,11 @@ public class NativeDeviceInfoProvider implements DeviceInfoProvider {
             + ",product=" + Build.PRODUCT
             + ")"
         ;
+    }
+
+    @Override
+    public String getAuthUserAgentString() {
+        return null;
     }
 
     public AndroidCheckinRequest generateAndroidCheckinRequest() {
